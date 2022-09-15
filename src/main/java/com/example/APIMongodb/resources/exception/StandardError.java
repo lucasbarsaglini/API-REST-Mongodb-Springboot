@@ -1,7 +1,6 @@
 package com.example.APIMongodb.resources.exception;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 import lombok.Data;
 
