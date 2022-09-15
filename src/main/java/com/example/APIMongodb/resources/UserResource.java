@@ -2,7 +2,6 @@ package com.example.APIMongodb.resources;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +35,7 @@ public class UserResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<UserDTO> findById(@PathVariable String id){
-		Optional<User> obj = userService.findById(id);
+		userService.findById(id);
 		return ResponseEntity.ok().body(new UserDTO());
 	}
 	
@@ -50,6 +50,14 @@ public class UserResource {
 	@RequestMapping(value = "/{id}")
 	public ResponseEntity<User> delete(@PathVariable String id){
 		userService.findById(id);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<User> update(@RequestBody UserDTO objDto, @PathVariable String id) {
+		User obj = userService.fromDTO(objDto);
+		obj.setId(id);
+		obj = userService.update(obj);
 		return ResponseEntity.noContent().build();
 	}
 }
