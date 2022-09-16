@@ -2,6 +2,7 @@ package com.example.APIMongodb.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.example.APIMongodb.domain.Post;
 import com.example.APIMongodb.domain.User;
 import com.example.APIMongodb.dto.UserDTO;
 import com.example.APIMongodb.services.UserService;
@@ -59,5 +61,11 @@ public class UserResource {
 		obj.setId(id);
 		obj = userService.update(obj);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@GetMapping(value = "/{id}/posts")
+	public ResponseEntity<List<Post>> findPosts(@PathVariable String id){
+		Optional<User> obj = userService.findById(id);
+		return ResponseEntity.ok().body(obj.get().getPosts());
 	}
 }
