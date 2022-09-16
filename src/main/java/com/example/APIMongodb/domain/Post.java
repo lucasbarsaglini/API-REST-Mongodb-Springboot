@@ -6,6 +6,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.example.APIMongodb.dto.AuthorDTO;
+
 import lombok.Data;
 
 @Data
@@ -18,12 +20,12 @@ public class Post implements Serializable{
 	private Date date;
 	private String title;
 	private String body;
-	private User author;
+	private AuthorDTO author;
 	
 	public Post() {
 	}
 	
-	public Post(String id, Date date, String title, String body, User author) {
+	public Post(String id, Date date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
