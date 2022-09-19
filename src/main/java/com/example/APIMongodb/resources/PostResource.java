@@ -1,7 +1,5 @@
 package com.example.APIMongodb.resources;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
