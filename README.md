@@ -7,7 +7,6 @@
 * [Descrição do projeto](#descrição-do-projeto)
 * [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Contribuintes](#contribuintes)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
 
 # Descrição do projeto
