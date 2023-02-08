@@ -25,6 +25,7 @@ Projeto de API Rest com objeto de utilizar o banco de dados não relacional para
 
 # Pessoas Desenvolvedoras do Projeto
 
+https://github.com/lucasbarsaglini
 
 
 
